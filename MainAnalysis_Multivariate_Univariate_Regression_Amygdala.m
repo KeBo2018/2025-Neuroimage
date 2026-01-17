@@ -28,8 +28,8 @@ Amyg = Amyg(validRow);
 X = zscore(DataA_sort_C(validRow,:), 0, 2);   % zscore within voxel across samples
 Y = valence_M;
 
-%% Univariate (mean across voxels)
-% X = mean(X, 1);                               % 1 x (60*nSub)
+%% Univariate 
+% X = mean(X, 1);         % Uncomment this line when perform univariate regression (mean across voxels)                       % 1 x (60*nSub)
 
 %% Test regression performance with cross-validation (leave-1-subject-out)
 kfold  = nSub;
@@ -61,5 +61,6 @@ end
 
 R_train_mean = mean(R_train);
 R_test_mean  = mean(R_test);
+
 
 
